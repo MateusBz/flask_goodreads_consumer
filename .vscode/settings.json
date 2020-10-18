@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/mateusz/.local/share/virtualenvs/goodreads_api-OQl1SOUc/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
