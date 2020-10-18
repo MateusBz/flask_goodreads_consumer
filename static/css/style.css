@@ -1,0 +1,16 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-color:  #f8f9fa;
+    
+}
+nav {
+    margin-top: 1rem;
+}
+#index_content {
+    margin-top: 6rem;
+
+}
+
+#index_content h2 {
+    line-height: 2;
+}
