@@ -46,5 +46,5 @@ def results():
     return render_template('results.html', content=content)
 
 if __name__ == '__main__':
-    app.run(DEBUG = config('FLASK_DEBUG', cast=bool))
+    app.run()
 
