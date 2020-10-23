@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}About Book
+{% endblock title %}
+
+{% block page_content %}
+    <div class='card'>
+        <div class='card-header'>
+            Tytuł: {{ content.book_title}}
+        </div>
+        <div class='body' style='padding: 1rem;'>
+
+           
+                <img class='book_img' src="{{ content.book_img }}" alt="" style='float: left;'>
+                <div style='float: left; margin-left: 1rem; width: 80%;'>
+                {% if content.authors|length > 1  %}
+                   <p> Authors: 
+                    {% for author in content.authors  %}
+                        {{ author }},
+                    {% endfor %}</p>
+                {% else %}
+                    <p>Author: {{ content.authors|join(' ')  }}</p>    
+                {% endif %}
+                
+                <p >ISBN: {{ content.book_isbn}}</p>
+                <p>Publication date: {{ content.book_publication_year}}
+                </p>
+                <p>Publisher: {{ content.book_publisher }}</p>
+                <p>Description: {{ content.book_description|safe}}</p>
+                </div>
+                
+           
+            
+        </div>
+    </div>
+    
+    
+    
+    
+{% endblock page_content %}

@@ -45,6 +45,38 @@ def results():
         
     return render_template('results.html', content=content)
 
+
+@app.route('/<int:id>/about_book', methods=['GET'])
+def about_book(id):
+    res = requests.get(
+        'https://www.goodreads.com/book/show/?', params={
+            'id': id,
+            'format': 'xml',
+            'key': config('API_KEY')
+        })
+    root = ET.fromstring(res.content)
+
+    book_isbn = root.find('./book/isbn').text
+    book_title = root.find('book/title').text
+    book_description = root.find('./book/description').text
+    book_img = root.find('./book/image_url').text
+    book_publication_year = root.find('./book/publication_year').text
+    book_publisher = root.find('./book/publisher').text
+    elements = root.findall('./book/authors/author/name')
+    authors = [item.text for item in elements]
+     
+    content = {
+        'book_isbn': book_isbn,
+        'book_title': book_title,
+        'book_description': book_description,
+        'book_img': book_img,
+        'book_publication_year': book_publication_year,
+        'book_publisher': book_publisher,
+        'authors': authors
+        
+    }
+    return render_template('about_book.html', content=content)
+    
 if __name__ == '__main__':
     app.run()
 
