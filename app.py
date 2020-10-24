@@ -86,9 +86,34 @@ def about_book(id):
 
 @app.route('/<int:id>/about_author', methods=['GET'])
 def about_author(id):
-    pass
+    res = requests.get(
+        'https://www.goodreads.com/author/show/?', params={
+            'id': id,
+            'format': 'xml',
+            'key': config('API_KEY')
+        })
+    root = ET.fromstring(res.content)
 
+    author_name = root.find('./author/name').text
+    author_image = root.find('./author/large_image_url').text
+    author_about = root.find('./author/about').text
 
+    elements = root.findall('./author/books/book/id')
+    author_books_id = [item.text for item in elements]
+
+    elements = root.findall('./author/books/book/title')
+    author_books_title = [item.text for item in elements]
+
+    author_books = list(zip(author_books_id, author_books_title))
+
+    content = {
+        'author_name': author_name,
+        'author_image': author_image,
+        'author_about': author_about,
+        'author_books': author_books
+    }
+
+    return render_template('about_author.html', content=content)
 
 if __name__ == '__main__':
     app.run()

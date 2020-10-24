@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+     <div class='card'>
+        <div class='card-header'>
+             {{ content.author_name}}
+        </div>
+        <div class='body' style='padding: 1rem;'>
+                <img class='book_img' src="{{ content.author_image }}" alt="" style='float: left;'>
+                <div style='float: left; margin-left: 1rem; width: 60%;'>
+                    <p>{{ content.author_about|safe }}</p>
+                </div>
+                <div style='clear: both; padding-top: 1rem;'>
+                <h4>Books:</h4>
+                    <ul>
+                    {% for book in content.author_books  %}
+                        <li><a href="{{ url_for ('about_book', id=book[0]) }}">{{ book[1] }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+        </div>
+    </div>
+{% endblock page_content %}
