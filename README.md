@@ -9,21 +9,12 @@ Instalation:
 </h4>
 <ul>
     <li>Clone the repository.</li>
-    <li>
-    ```
-    cd flask_goodreads_consumer/
-    ``` 
+    <li>`cd flask_goodreads_consumer/`
     and change .env.example to .env.</li>
     <li>Get your developer key from Goodreads API and copy to .env API_KEY.</li>
     <li>In .env change debug and flask_env to your value.</li>
-    <li>
-    ``` 
-    pipenv install 
-    ```
+    <li>`pipenv install`
     </li>
-    <li>
-    ``` 
-    flask run 
-    ```
+    <li>`flask run`
     </li>
   </ul>
