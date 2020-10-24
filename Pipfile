@@ -9,6 +9,7 @@ autopep8 = "*"
 [packages]
 flask = "*"
 python-decouple = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
