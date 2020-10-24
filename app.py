@@ -117,6 +117,4 @@ def about_author(id):
 
     return render_template('about_author.html', content=content)
 
-if __name__ == '__main__':
-    app.run()
 
