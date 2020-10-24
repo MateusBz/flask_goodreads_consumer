@@ -13,6 +13,6 @@ Instalation:
     and change .env.example to .env.
 - Get your developer key from Goodreads API and copy to .env API_KEY.
 - In .env change debug and flask_env to your value.
-- `pipenv install`
+- `pipenv install` amd `pipenv shell`
 - `flask run`
     
