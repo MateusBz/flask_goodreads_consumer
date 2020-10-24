@@ -21,9 +21,10 @@ nav {
 .card-img-top{
     padding: 0.5rem;
 }
-.card-body p, h6{
-    font-size:small
+.card-title-result, .card-body-result{
+    font-size: small;
 }
+
 .book_img{
     float: left;
 }
