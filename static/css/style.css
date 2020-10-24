@@ -1,7 +1,12 @@
 body {
     font-family: 'Playfair Display', serif;
     background-color:  #f8f9fa;
+
     
+}
+a:link, a:hover, a:visited, a:active{
+    color: black;
+    text-decoration: none;   
 }
 nav {
     margin-top: 1rem;
