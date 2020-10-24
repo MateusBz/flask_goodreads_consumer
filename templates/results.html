@@ -18,8 +18,8 @@
                     <h6 class="card-text" style='font-size:small'>{{ item[3]}}</h6>
                 </div>
                 <div class='d-flex flex-column text-center'> 
-                    <div class='about_book'><a href="{{ url_for('about_book', id=item[0]) }}" class="btn btn-outline-success">About Book</a></div>
-                    <div class='about_author'><a href="#" class="btn btn-outline-success">About Author</a></div>
+                    <div class='about_book'><a href="{{ url_for('about_book', id=item[0]) }}" class="btn btn-outline-success btn-block" >About Book</a></div>
+                    <div class='about_author'><a href="{{ url_for('about_author', id=item[2]) }}" class="btn btn-outline-success btn-block">About Author</a></div>
                 </div>
             </div>
         </div>
