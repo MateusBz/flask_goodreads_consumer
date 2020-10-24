@@ -59,7 +59,9 @@ def about_book(id):
     book_isbn = root.find('./book/isbn').text
     book_title = root.find('book/title').text
     book_description = root.find('./book/description').text
+
     book_img = root.find('./book/image_url').text
+    book_large_img = re.sub('._SX98_', '', book_img)
     book_publication_year = root.find('./book/publication_year').text
     book_publisher = root.find('./book/publisher').text
 
@@ -75,7 +77,7 @@ def about_book(id):
         'book_isbn': book_isbn,
         'book_title': book_title,
         'book_description': book_description,
-        'book_img': book_img,
+        'book_img': book_large_img,
         'book_publication_year': book_publication_year,
         'book_publisher': book_publisher,
         'authors': authors
