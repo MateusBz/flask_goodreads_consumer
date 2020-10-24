@@ -19,7 +19,7 @@
                         <a href="{{ url_for('about_author', id=author[0]) }}">{{ author[1] }}</a>,
                     {% endfor %}</p>
                 {% else %}
-                    <p>Author: {{ content.authors|join(' ')  }}</p>    
+                    <p>Author: <a href="{{ url_for('about_author', id=content.authors[0][0]) }}">{{ content.authors[0][1] }}</a></p>    
                 {% endif %}
                 <p>ISBN: {{ content.book_isbn}}</p>
                 <p>Publication date: {{ content.book_publication_year}}
