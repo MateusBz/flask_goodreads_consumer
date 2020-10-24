@@ -5,9 +5,9 @@
         <div class='card-header'>
              {{ content.author_name}}
         </div>
-        <div class='body' style='padding: 1rem;'>
-                <img class='book_img' src="{{ content.author_image }}" alt="" style='float: left;'>
-                <div style='float: left; margin-left: 1rem; width: 60%;'>
+        <div class='card-body'>
+                <img class='author_img' src="{{ content.author_image }}" alt="">
+                <div class='author_about'>
                     <p>{{ content.author_about|safe }}</p>
                 </div>
                 <div style='clear: both; padding-top: 1rem;'>

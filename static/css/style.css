@@ -15,17 +15,41 @@ nav {
     margin-top: 6rem;
 
 }
-
+.card-body{
+    padding: 1rem;
+}
+.card-img-top{
+    padding: 0.5rem;
+}
+.card-body p, h6{
+    font-size:small
+}
+.book_img{
+    float: left;
+}
+.book_content{
+    float: left; 
+    margin-left: 1rem; 
+    width: 60%;
+}
+.author_img{
+    float: left;
+}
+.author_about{
+    float: left; 
+    margin-left: 1rem; 
+    width: 60%;
+}
 #index_content h2 {
     line-height: 2;
 }
 
-.about_book{
+.about_book_button{
     margin-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
-.about_author{
+.about_author_button{
     margin-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;

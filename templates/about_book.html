@@ -8,24 +8,22 @@
         <div class='card-header'>
             {{ content.book_title}}
         </div>
-        <div class='body' style='padding: 1rem;'>
-
-           
-                <img class='book_img' src="{{ content.book_img }}" alt="" style='float: left;' width="333" height="400">
-                <div style='float: left; margin-left: 1rem; width: 60%;'>
-                {% if content.authors|length > 1  %}
-                   <p> Authors: 
-                    {% for author in content.authors  %}
-                        <a href="{{ url_for('about_author', id=author[0]) }}">{{ author[1] }}</a>,
-                    {% endfor %}</p>
-                {% else %}
-                    <p>Author: <a href="{{ url_for('about_author', id=content.authors[0][0]) }}">{{ content.authors[0][1] }}</a></p>    
-                {% endif %}
-                <p>ISBN: {{ content.book_isbn}}</p>
-                <p>Publication date: {{ content.book_publication_year}}
-                </p>
-                <p>Publisher: {{ content.book_publisher }}</p>
-                <p>Description: <br> {{ content.book_description|safe}}</p>
+        <div class='card-body'>
+                <img class='book_img' src="{{ content.book_img }}" alt="" width="300" height="400">
+                <div class='book_content'>
+                    {% if content.authors|length > 1  %}
+                    <p> Authors: 
+                        {% for author in content.authors  %}
+                            <a href="{{ url_for('about_author', id=author[0]) }}">{{ author[1] }}</a>,
+                        {% endfor %}</p>
+                    {% else %}
+                        <p>Author: <a href="{{ url_for('about_author', id=content.authors[0][0]) }}">{{ content.authors[0][1] }}</a></p>    
+                    {% endif %}
+                    <p>ISBN: {{ content.book_isbn}}</p>
+                    <p>Publication date: {{ content.book_publication_year}}
+                    </p>
+                    <p>Publisher: {{ content.book_publisher }}</p>
+                    <p>Description: <br> {{ content.book_description|safe}}</p>
                 </div>
                 
            
