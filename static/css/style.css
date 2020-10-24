@@ -17,7 +17,11 @@ nav {
 
 .about_book{
     margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .about_author{
     margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

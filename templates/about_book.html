@@ -6,7 +6,7 @@
 {% block page_content %}
     <div class='card'>
         <div class='card-header'>
-            Tytuł: {{ content.book_title}}
+            Title: {{ content.book_title}}
         </div>
         <div class='body' style='padding: 1rem;'>
 
@@ -16,17 +16,16 @@
                 {% if content.authors|length > 1  %}
                    <p> Authors: 
                     {% for author in content.authors  %}
-                        {{ author }},
+                        <a href="{{ url_for('about_author', id=author[0]) }}">{{ author[1] }}</a>,
                     {% endfor %}</p>
                 {% else %}
                     <p>Author: {{ content.authors|join(' ')  }}</p>    
                 {% endif %}
-                
-                <p >ISBN: {{ content.book_isbn}}</p>
+                <p>ISBN: {{ content.book_isbn}}</p>
                 <p>Publication date: {{ content.book_publication_year}}
                 </p>
                 <p>Publisher: {{ content.book_publisher }}</p>
-                <p>Description: {{ content.book_description|safe}}</p>
+                <p>Description: <br> {{ content.book_description|safe}}</p>
                 </div>
                 
            

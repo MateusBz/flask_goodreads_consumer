@@ -62,8 +62,14 @@ def about_book(id):
     book_img = root.find('./book/image_url').text
     book_publication_year = root.find('./book/publication_year').text
     book_publisher = root.find('./book/publisher').text
+
+    elements = root.findall('./book/authors/author/id')
+    authors_id = [item.text for item in elements]
+
     elements = root.findall('./book/authors/author/name')
-    authors = [item.text for item in elements]
+    authors_names = [item.text for item in elements]
+
+    authors = list(zip(authors_id, authors_names))
      
     content = {
         'book_isbn': book_isbn,
@@ -76,7 +82,14 @@ def about_book(id):
         
     }
     return render_template('about_book.html', content=content)
-    
+
+
+@app.route('/<int:id>/about_author', methods=['GET'])
+def about_author(id):
+    pass
+
+
+
 if __name__ == '__main__':
     app.run()
 
